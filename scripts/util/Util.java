@@ -10,7 +10,7 @@ public class Util {
 		return f.format(number);
 	}
 
-	public static boolean arrayContains(int[] arg0, int... arg1) {
+	public static boolean arrayContainsOneOf(int[] arg0, int... arg1) {
 		for (int a : arg0) {
 			for (int b : arg1) {
 				if (a == b) {

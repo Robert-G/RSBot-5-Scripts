@@ -44,7 +44,7 @@ public class Combat extends TaskShell<ManMassacre> {
 
 			@Override
 			public boolean accept(Npc arg0) {
-				if (!Util.arrayContains(ids, arg0.getId()) || arg0.getInteracting().isValid()) {
+				if (!Util.arrayContainsOneOf(ids, arg0.getId()) || arg0.getInteracting().isValid()) {
 					return false;
 				}
 				if (arg0.getHealthPercent() > 0 && arg0.getAnimation() == -1) {
