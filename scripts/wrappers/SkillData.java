@@ -21,7 +21,7 @@ public class SkillData<T extends ShellScipt> extends MethodProvider {
 	
 	public int getGainedExp(int skill, boolean ph) {
 		final int exp = (ctx.skills.getExperience(skill) - startExp[skill]);
-		return exp > 0 ? ph ? ph(exp) : exp : 0;
+		return exp > 0 ? ph ? perHour(exp) : exp : 0;
 	}
 	
 	public String getGainedExpString(int skill, boolean ph) {
@@ -66,12 +66,12 @@ public class SkillData<T extends ShellScipt> extends MethodProvider {
 		return time > 0 ? Util.formatTime(time) : "0";
 	}
 
-	public int ph(int arg0) {
+	public int perHour(int arg0) {
 		return arg0 > 0 ? (int)(3600000.0 / t.getRuntime() * arg0) : 0;
 	}
 	
-	public String phString(int arg0) {
-		return arg0 > 0 ? Util.formatNumber(ph(arg0)) : "0";
+	public String perHourString(int arg0) {
+		return arg0 > 0 ? Util.formatNumber(perHour(arg0)) : "0";
 	}
 
 }
