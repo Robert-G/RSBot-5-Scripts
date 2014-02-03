@@ -33,8 +33,7 @@ public class Abilities extends TaskShell<ManMassacre> {
 
 	@Override
 	public boolean activate() {
-		in = ctx.players.local().getInteracting();
-		return in.isValid() && in.getLevel() > 0 && in.getHealthPercent() > 1;
+		return (in = ctx.players.local().getInteracting()).isValid() && in.getLevel() > 0 && in.getHealthPercent() > 1;
 	}
 	
 	@Override
