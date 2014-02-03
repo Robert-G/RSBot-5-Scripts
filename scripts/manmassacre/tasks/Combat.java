@@ -78,7 +78,7 @@ public class Combat extends TaskShell<ManMassacre> {
 				return 0;
 			}
 		} else {
-			if (!npcLoc.getMatrix(ctx).isOnMap()) {
+			if (!npcLoc.getMatrix(ctx).isOnScreen()) {
 				if (ctx.movement.stepTowards(npcLoc)) {
 					Condition.wait(new Callable<Boolean>() {
 
