@@ -67,21 +67,6 @@ public class Banking extends TaskShell<ManMassacre> {
 					}
 				}
 			}
-			if (!ctx.bank.isOpen()) {
-				script.setScriptState("Opening bank.");
-				if (ctx.bank.open()) {
-					Condition.wait(new Callable<Boolean>() {
-
-						@Override
-						public Boolean call() throws Exception {
-							return ctx.bank.isOpen();
-						}
-
-					});
-				}
-			} else {
-				
-			}
 		}
 		return 0;
 	}
